@@ -23,4 +23,14 @@ def extended_iterative(a: int, b: int) -> Dict[str, int]:
 print(extended_iterative(973, 301))
 print(extended_iterative(973, 973))
 print(extended_iterative(25, 5))
-print(extended_iterative(25, 5))
+
+
+def inverse_of(a: int, n: int) -> int:
+    result = extended_iterative(n, a)
+    if result["gcd"] != 1:
+        raise ArithmeticError(f"there is no inverse for {a} in the integer ring Z({n})")
+    return result["t"] % n
+
+
+print(inverse_of(302, 973))
+print(inverse_of(301, 973))  # error
