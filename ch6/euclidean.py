@@ -1,6 +1,3 @@
-import math
-
-
 def gcd_recursive(a: int, b: int) -> int:
     """a <= b"""
     if a == 0:
